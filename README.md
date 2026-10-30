@@ -1,17 +1,3 @@
 # MP2 REST API
 
-Starter structure for DS3500 MP2 Part 1.
-
-```text
-mp2-rest-api/
-├── .gitignore
-├── requirements.txt
-├── main.py
-├── src/
-│   ├── __init__.py
-│   ├── models.py
-│   ├── storage.py
-│   └── utils.py
-└── fixtures/
-    └── sample_data.csv
-```
+This application uses FastAPI to upload, retrieve, and process CSV datasets stored in memory. `GET /health` returns the application’s status and version, while `POST /upload` accepts a CSV file and returns its dataset ID and metadata. `GET /datasets/{dataset_id}` retrieves a stored dataset with an optional row limit. Finally, `POST /datasets/{dataset_id}/process` uses the reusable MP1 functions to validate and clean the dataset, update the stored data, and return a cleaning report.
